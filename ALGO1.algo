@@ -1,0 +1,24 @@
+ALGORITHM GMC_Algo1
+VAR
+     b , c , d : INTEGER := 0
+    sentece : STRING[52] :="allways put salt in water before you boil spaghetti."
+    voyels : STRING[6] :="aeiouy"
+    //a = how many  chars you have 
+    //b = how many letters do you have
+    //c= how many voyels you have 
+    //d = how many words you have
+BEGIN
+    
+    FOR i FROM 1 TO sentence.length STEP 1  DO
+        IF ((sentence[i]<> " ")&& (sentence <> ",") && (sentence[i]<> " .")) THEN
+            b:= b + 1 ; 
+        ELSE_IF ((sentence[i] = " ") OR (sentence[i] = " . ")) THEN
+        d := d+1 ;
+        END_IF
+        FOR j FROM 1 TO voyels.length STEP 1  DO
+            IF ((sentence[i] = voyels[j])) THEN
+                c := c + 1 ;
+            END_IF
+        END_FOR
+    END_FOR
+END
